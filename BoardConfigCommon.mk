@@ -107,5 +107,9 @@ RECOVERY_BINARY_SOURCE_FILES += \
     $(TARGET_OUT_EXECUTABLES)/strace \
     $(TARGET_OUT_EXECUTABLES)/tombstoned
 
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
 # Inherit extra if exists
 -include vendor/extra/BoardConfigExtra.mk
