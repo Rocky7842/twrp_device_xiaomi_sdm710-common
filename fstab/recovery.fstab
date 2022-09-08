@@ -5,3 +5,9 @@
 #<src>                                  <mnt_point>     <type>      <mnt_flags and options>             <fs_mgr_flags>
 /dev/block/bootdevice/by-name/config    /frp			emmc	    defaults							defaults
 /dev/block/bootdevice/by-name/misc      /misc			emmc	    defaults							defaults
+
+system /system ext4 rw,barrier=1,discard wait,logical
+system_ext /system_ext ext4 rw,barrier=1,discard wait,logical
+product /product ext4 rw,barrier=1,discard wait,logical
+vendor /vendor ext4 rw,barrier=1,discard wait,logical
+odm /odm ext4 rw,barrier=1,discard wait,logical

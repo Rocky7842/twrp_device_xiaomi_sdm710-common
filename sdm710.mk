@@ -10,6 +10,9 @@ TARGET_USES_XIAOMI_SDM710_COMMON_TREE := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Crypto
 ifeq ($(MI710_INCLUDE_CRYPTO_FBE),true)
 MI710_INCLUDE_CRYPTO := true
