@@ -41,30 +41,9 @@ PRODUCT_COPY_FILES += \
 # Fstab
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/fstab/$(MI710_FSTAB_VARIANT)/,$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/)
 
-# Proprietary - BEGIN
-ifneq ($(MI710_USES_DEVICE_SPECIFIC_BLOBS),true)
-
 # Proprietary - QSEECOMd
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qseecomd/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
-
-# Proprietary - QTI Gatekeeper 1.0
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-gatekeeper-1-0/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
-
-# Proprietary - QTI Keymaster
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-common/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
-ifeq ($(MI710_KEYMASTER_VERSION),3.0)
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-3-0/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
-else ifeq ($(MI710_KEYMASTER_VERSION),4.0)
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-4-0/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
-endif
-
-# Proprietary - END
-endif # MI710_USES_DEVICE_SPECIFIC_BLOBS
 
 # Vintf - Keymaster
 ifeq ($(MI710_KEYMASTER_VERSION),3.0)
