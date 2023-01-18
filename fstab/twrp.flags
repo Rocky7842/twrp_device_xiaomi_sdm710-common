@@ -7,6 +7,9 @@
 # Cache
 /cache          ext4    /dev/block/bootdevice/by-name/cache                     flags=fsflags="discard"
 
+# DTBO
+/dtbo           emmc    /dev/block/bootdevice/by-name/dtbo                      flags=display="DTBO";backup=1;flashimg=1
+
 # Metadata
 /metadata       ext4    /dev/block/bootdevice/by-name/logdump                   flags=display="Metadata";fsflags="discard"
 
@@ -31,3 +34,6 @@
 # Removable storage
 /sdcard1        auto    /dev/block/mmcblk0p1                                    flags=display="MicroSD";removable;storage;wipeingui
 /usb_otg        auto    /dev/block/sdg1             /dev/block/sdg              flags=display="USB OTG";removable;storage;wipeingui
+
+# VBMeta
+/vbmeta         emmc    /dev/block/bootdevice/by-name/vbmeta                    flags=display="VBMeta";backup=1;flashimg=1
