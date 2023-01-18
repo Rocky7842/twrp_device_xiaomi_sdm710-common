@@ -89,6 +89,16 @@
         <version>1.0</version>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.qccsyshal</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IQccsyshal</name>
+            <instance>qccsyshal</instance>
+        </interface>
+        <fqname>@1.0::IQccsyshal/qccsyshal</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.radio.atcmdfwd</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -99,14 +109,14 @@
         <fqname>@1.0::IAtCmdFwd/AtCmdFwdService</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.sigma_miracast</name>
+        <name>vendor.qti.hardware.wifi.keystore</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>Isigma_miracast</name>
-            <instance>sigmahal</instance>
+            <name>IKeystoreExt</name>
+            <instance>default</instance>
         </interface>
-        <fqname>@1.0::Isigma_miracast/sigmahal</fqname>
+        <fqname>@1.0::IKeystoreExt/default</fqname>
     </hal>
     <system-sdk>
         <version>28</version>
