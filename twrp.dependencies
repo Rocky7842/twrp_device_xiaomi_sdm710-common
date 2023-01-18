@@ -1,7 +1,7 @@
 [
   {
-    "repository": "android_device_xiaomi_kernel-mithorium",
-    "target_path": "device/xiaomi/kernel-mithorium",
+    "repository": "android_device_xiaomi_kernel-sdm710",
+    "target_path": "device/xiaomi/kernel-sdm710",
     "branch": "master"
   }
 ]
