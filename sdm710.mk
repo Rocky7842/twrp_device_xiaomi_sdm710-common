@@ -41,9 +41,11 @@ PRODUCT_COPY_FILES += \
 # Fstab
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/fstab/$(MI710_FSTAB_VARIANT)/,$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/)
 
-# Proprietary - QSEECOMd
+# Vendor blobs
+ifneq ($(wildcard vendor/xiaomi/sdm710-common/proprietary/),)
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qseecomd/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
+    $(call find-copy-subdir-files,*,vendor/xiaomi/sdm710-common/proprietary/,$(TARGET_COPY_OUT_RECOVERY)/root/)
+endif
 
 # Vintf - Keymaster
 ifeq ($(MI710_KEYMASTER_VERSION),3.0)
