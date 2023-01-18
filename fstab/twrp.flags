@@ -38,5 +38,9 @@
 /sdcard1        auto    /dev/block/mmcblk0p1                                    flags=display="MicroSD";removable;storage;wipeingui
 /usb_otg        auto    /dev/block/sdg1             /dev/block/sdg              flags=display="USB OTG";removable;storage;wipeingui
 
+# Super block devices
+/super_cust     emmc    /dev/block/by-name/cust                                 flags=display="Super_cust";backup=1
+/super_vendor   emmc    /dev/block/by-name/vendor                               flags=display="Super_vendor";backup=1
+
 # VBMeta
 /vbmeta         emmc    /dev/block/bootdevice/by-name/vbmeta                    flags=display="VBMeta";backup=1;flashimg=1
