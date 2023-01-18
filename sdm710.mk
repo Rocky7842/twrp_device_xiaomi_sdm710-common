@@ -15,9 +15,6 @@ ifeq ($(MI710_INCLUDE_CRYPTO_FBE),true)
 MI710_INCLUDE_CRYPTO := true
 PRODUCT_PACKAGES += qcom_decrypt_fbe
 endif
-ifeq ($(MI710_INCLUDE_CRYPTO_FDE),true)
-MI710_INCLUDE_CRYPTO := true
-endif
 ifeq ($(MI710_INCLUDE_CRYPTO),true)
 PRODUCT_PACKAGES += qcom_decrypt
 ifeq ($(MI710_LEGACY_CRYPTO),true)
