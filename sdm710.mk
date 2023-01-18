@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/fstab/$(MI71
 # Vendor blobs
 ifneq ($(wildcard vendor/xiaomi/sdm710-common/proprietary/),)
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/sdm710-common/proprietary/,$(TARGET_COPY_OUT_RECOVERY)/root/)
+    $(call find-copy-subdir-files,*,vendor/xiaomi/sdm710-common/proprietary/vendor/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
 endif
 
 # Vintf - Keymaster
