@@ -30,7 +30,7 @@ BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA900
 BOARD_KERNEL_CMDLINE += firmware_class.path=/system/etc/firmware printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 ifeq ($(PRODUCT_USE_DYNAMIC_PARTITIONS),true)
-BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/7824900.sdhci
+BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/1d84000.ufshc
 endif
 
 BOARD_BOOT_HEADER_VERSION := 2
@@ -42,7 +42,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 # Partitions
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x04000000
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USERIMAGES_USE_F2FS := true
