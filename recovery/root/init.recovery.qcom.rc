@@ -19,3 +19,7 @@ on boot
 
 on boot
     start health-hal-2-1
+
+# DT2W
+on init
+    write /sys/touchpanel/double_tap 1
