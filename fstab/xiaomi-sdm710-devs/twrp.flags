@@ -35,8 +35,8 @@
 /persist_image  emmc    /dev/block/bootdevice/by-name/persist                   flags=display="Persist";backup=1;flashimg=1
 
 # Removable storage
-/sdcard1        auto    /dev/block/mmcblk0p1                                    flags=display="MicroSD";removable;storage;wipeingui
-/usb_otg        auto    /dev/block/sdg1             /dev/block/sdg              flags=display="USB OTG";removable;storage;wipeingui
+/sdcard1        auto    /dev/block/mmcblk0p1    /dev/block/mmcblk0p4            flags=display="MicroSD";removable;storage;wipeingui
+/usb_otg        auto    /dev/block/sdg1         /dev/block/sdg4                 flags=display="USB OTG";removable;storage;wipeingui
 
 # Super block devices
 /super_cust     emmc    /dev/block/by-name/cust                                 flags=display="Super_cust";backup=1
