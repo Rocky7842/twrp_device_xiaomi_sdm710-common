@@ -10,8 +10,17 @@ TARGET_USES_XIAOMI_SDM710_COMMON_TREE := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
+# Fstab
+MI710_FSTAB_VARIANT ?= xiaomi-sdm710-devs
+
+ifeq ($(filter xiaomi-sdm710-devs stock,$(MI710_FSTAB_VARIANT)),)
+$(error Invalid Xiaomi SDM710 fstab variant: $(MI710_FSTAB_VARIANT))
+endif
+
 # Partitions
+ifeq ($(MI710_FSTAB_VARIANT),xiaomi-sdm710-devs)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+endif
 
 # Crypto
 PRODUCT_PACKAGES += \
@@ -30,7 +39,7 @@ PRODUCT_COPY_FILES += \
     $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/system/apex/com.android.runtime/bin/crash_dump64:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/crash_dump64
 
 # Fstab
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/fstab/,$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/fstab/$(MI710_FSTAB_VARIANT)/,$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/)
 
 # Proprietary - BEGIN
 ifneq ($(MI710_USES_DEVICE_SPECIFIC_BLOBS),true)
