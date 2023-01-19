@@ -1,0 +1,23 @@
+# Unpinned blobs from vela-user 11 RKQ1.200826.002 V12.5.5.0.RFECNXM release-keys
+
+# Charger
+vendor/bin/hvdcp_opti
+
+# QSEECOMd
+vendor/bin/qseecomd
+vendor/lib64/libdiag.so
+vendor/lib64/libdisplayconfig.qti.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libops.so
+vendor/lib64/libqisl.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/librpmb.so
+vendor/lib64/libsecureui.so
+vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libssd.so
+vendor/lib64/libStDrvInt.so
+vendor/lib64/libtime_genoff.so
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
