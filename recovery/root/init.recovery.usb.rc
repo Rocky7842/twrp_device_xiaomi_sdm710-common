@@ -28,7 +28,7 @@
 on early-fs && property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
 
-on early-fs && property:ro.boot.usbconfigfs=true
+on early-fs && property:ro.boot.configfs=true
     setprop sys.usb.configfs 1
 
 on post-fs && property:sys.usb.configfs=1
