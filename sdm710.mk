@@ -17,9 +17,10 @@ ifeq ($(filter xiaomi-sdm710-devs stock,$(MI710_FSTAB_VARIANT)),)
 $(error Invalid Xiaomi SDM710 fstab variant: $(MI710_FSTAB_VARIANT))
 endif
 
-# Partitions
+# Dynamic Partitions
 ifeq ($(MI710_FSTAB_VARIANT),xiaomi-sdm710-devs)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 endif
 
 # Crypto
