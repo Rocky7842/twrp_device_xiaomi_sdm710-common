@@ -1,7 +1,8 @@
 [
   {
-    "repository": "android_device_xiaomi_kernel-sdm710",
-    "target_path": "device/xiaomi/kernel-sdm710",
-    "branch": "master"
+    "remote"     : "github",
+    "repository" : "Rocky7842/proprietary_vendor_xiaomi_sdm710-common",
+    "target_path": "vendor/xiaomi/sdm710-common",
+    "branch"     : "twrp-12.1"
   }
 ]
