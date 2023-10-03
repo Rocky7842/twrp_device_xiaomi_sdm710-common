@@ -4,6 +4,9 @@ import /init.recovery.qcom_decrypt.rc
 on init
     exec u:r:recovery:s0 -- /system/bin/resetprop ro.boot.verifiedbootstate orange
 
+    # DT2W
+    write /sys/touchpanel/double_tap 1
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -11,12 +14,11 @@ on fs
 on boot
     start health-hal-2-1
 
+    # HVDCP
+    start hvdcp_opti
+
     # Vibrator
     start vendor.qti.vibrator
-
-# DT2W
-on init
-    write /sys/touchpanel/double_tap 1
 
 # HVDCP
 service hvdcp_opti /system/bin/hvdcp_opti
@@ -24,9 +26,6 @@ service hvdcp_opti /system/bin/hvdcp_opti
     group root
     disabled
     seclabel u:r:recovery:s0
-
-on boot
-    start hvdcp_opti
 
 # Vibrator
 service vendor.qti.vibrator /system/bin/hw/vendor.qti.hardware.vibrator.service
