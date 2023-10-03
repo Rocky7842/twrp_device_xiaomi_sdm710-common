@@ -48,7 +48,9 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/xiaomi/sdm710-common/proprietary/vendor/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
 endif
 
-# Vintf - Keymaster
+# Keymaster
+PRODUCT_PROPERTY_OVERRIDES += keymaster_ver=$(MI710_KEYMASTER_VERSION)
+
 ifeq ($(MI710_KEYMASTER_VERSION),3.0)
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/vintf/keymaster-3-0.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest/keymaster-3-0.xml
 else ifeq ($(MI710_KEYMASTER_VERSION),4.0)
