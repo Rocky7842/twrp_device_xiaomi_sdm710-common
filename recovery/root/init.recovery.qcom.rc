@@ -1,3 +1,4 @@
+import /merge-fstab.rc
 import /init.recovery.device.rc
 import /init.recovery.qcom_decrypt.rc
 

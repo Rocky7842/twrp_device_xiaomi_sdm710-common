@@ -1,0 +1,2 @@
+on init
+    exec u:r:recovery:s0 -- /system/bin/merge-fstab.sh
