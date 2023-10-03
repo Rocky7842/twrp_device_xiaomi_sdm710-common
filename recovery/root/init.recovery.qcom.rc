@@ -11,6 +11,9 @@ on fs
 on boot
     start health-hal-2-1
 
+    # Vibrator
+    start vendor.qti.vibrator
+
 # DT2W
 on init
     write /sys/touchpanel/double_tap 1
@@ -24,3 +27,10 @@ service hvdcp_opti /system/bin/hvdcp_opti
 
 on boot
     start hvdcp_opti
+
+# Vibrator
+service vendor.qti.vibrator /system/bin/hw/vendor.qti.hardware.vibrator.service
+    class hal
+    user system
+    group system input
+    seclabel u:r:recovery:s0
