@@ -30,8 +30,14 @@ ALLOW_MISSING_DEPENDENCIES := true
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 swiotlb=1 loop.max_part=7
 BOARD_KERNEL_CMDLINE += firmware_class.path=/system/etc/firmware printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 ifeq ($(PRODUCT_USE_DYNAMIC_PARTITIONS),true)
-BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent androidboot.boot_devices=soc/1d84000.ufshc
+BOARD_KERNEL_CMDLINE += androidboot.android_dt_dir=/non-existent
+ifeq ($(TARGET_USE_EMMC),true)
+BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/7c4000.sdhci
+else
+BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1d84000.ufshc
+endif
 endif
 
 BOARD_BOOT_HEADER_VERSION := 2
@@ -82,6 +88,13 @@ endif
 # Recovery
 TARGET_RECOVERY_DEVICE_DIRS += $(COMMON_PATH)
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+
+# Storage
+ifeq ($(TARGET_USE_EMMC),true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(COMMON_PATH)/fstab/merge-fstab-emmc/bin/,$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/) \
+    $(call find-copy-subdir-files,*,$(COMMON_PATH)/fstab/merge-fstab-emmc/init/,$(TARGET_COPY_OUT_RECOVERY)/root/)
+endif
 
 # TWRP
 TARGET_RECOVERY_QCOM_RTC_FIX := true
