@@ -1,4 +1,0 @@
-# Super block devices
-/super_system   emmc    /dev/block/bootdevice/by-name/system                    flags=display="Super Image";backup=1
-/super_vendor   emmc    /dev/block/bootdevice/by-name/vendor                    flags=display="Super Image Part 2";backup=1;subpartitionof=/super_system
-/super_cust     emmc    /dev/block/bootdevice/by-name/cust                      flags=display="Super Image Part 3";backup=1;subpartitionof=/super_system
