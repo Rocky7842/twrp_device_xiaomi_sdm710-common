@@ -95,6 +95,12 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(COMMON_PATH)/fstab/merge-fstab-emmc/bin/,$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/) \
     $(call find-copy-subdir-files,*,$(COMMON_PATH)/fstab/merge-fstab-emmc/init/,$(TARGET_COPY_OUT_RECOVERY)/root/)
 endif
+ifeq ($(TARGET_USE_SDCARD),true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(COMMON_PATH)/fstab/merge-fstab-sdcard/bin/,$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/) \
+    $(call find-copy-subdir-files,*,$(COMMON_PATH)/fstab/merge-fstab-sdcard/etc/,$(TARGET_COPY_OUT_RECOVERY)/root/system/etc) \
+    $(call find-copy-subdir-files,*,$(COMMON_PATH)/fstab/merge-fstab-sdcard/init/,$(TARGET_COPY_OUT_RECOVERY)/root/)
+endif
 
 # TWRP
 TARGET_RECOVERY_QCOM_RTC_FIX := true

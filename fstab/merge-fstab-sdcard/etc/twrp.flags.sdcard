@@ -1,0 +1,2 @@
+# Removable storage
+/sdcard1        auto    /dev/block/mmcblk0p1    /dev/block/mmcblk0p4            flags=display="MicroSD";removable;storage;wipeingui
