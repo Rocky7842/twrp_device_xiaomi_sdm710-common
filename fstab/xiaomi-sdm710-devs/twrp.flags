@@ -15,6 +15,7 @@
 
 # Metadata
 /metadata       ext4    /dev/block/bootdevice/by-name/logdump                   flags=display="Metadata";fsflags="discard";mounttodecrypt
+/metadata_imeage emmc   /dev/block/bootdevice/by-name/logdump                   flags=display="Metadata";backup=1;flashimg=1
 
 # Modem
 /firmware       vfat    /dev/block/bootdevice/by-name/modem                     flags=display="Firmware";fsflags="ro";mounttodecrypt
