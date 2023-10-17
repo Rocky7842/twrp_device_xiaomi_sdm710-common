@@ -1,2 +1,5 @@
 on init
     exec u:r:recovery:s0 -- /system/bin/merge-fstab.sh
+
+on property:sys.usb.ffs.ready=1
+    exec u:r:recovery:s0 -- /system/bin/dynamic-prop-fix.sh
