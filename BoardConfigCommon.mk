@@ -82,7 +82,7 @@ endif
 
 # Properties
 ifeq ($(MI710_FSTAB_VARIANT),xiaomi-sdm710-devs)
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_fbev1.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_crypto.prop
 endif
 
 # Recovery
