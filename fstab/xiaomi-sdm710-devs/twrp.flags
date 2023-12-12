@@ -14,8 +14,7 @@
 /dtbo           emmc    /dev/block/bootdevice/by-name/dtbo                      flags=display="DTBO";backup=1;flashimg=1
 
 # Metadata
-/metadata       ext4    /dev/block/bootdevice/by-name/logdump                   flags=display="Metadata";fsflags="discard";mounttodecrypt
-/metadata_imeage emmc   /dev/block/bootdevice/by-name/logdump                   flags=display="Metadata";backup=1
+/metadata       ext4    /dev/block/bootdevice/by-name/logdump                   flags=display="Metadata";fsflags="discard";mounttodecrypt;wipeingui
 
 # Modem
 /firmware       vfat    /dev/block/bootdevice/by-name/modem                     flags=display="Firmware";fsflags="ro";mounttodecrypt
