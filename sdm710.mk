@@ -20,7 +20,6 @@ endif
 # Dynamic Partitions
 ifeq ($(MI710_FSTAB_VARIANT),xiaomi-sdm710-devs)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 endif
 
 # Crypto
